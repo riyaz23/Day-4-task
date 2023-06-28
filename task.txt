@@ -1,0 +1,307 @@
+1.Do the below programs in anonymous function & IIFE and arrow function
+
+Print odd numbers in an array
+Convert all the strings to title caps in a string array
+Sum of all numbers in an array
+Return all the prime numbers in an array
+Return all the palindromes in an array
+Return median of two sorted arrays of the same size.
+Remove duplicates from an array
+Rotate an array by k times
+
+-----------------------------------------------------------------------------------------
+
+2.Do the below programs in arrow functions.
+
+Print odd numbers in an array
+Convert all the strings to title caps in a string array
+Sum of all numbers in an array
+Return all the prime numbers in an array
+Return all the palindromes in an array
+
+--------------------------------------------------------------------------------------------
+
+1.Print odd numbers in an array:
+->Anonymous Function:
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      console.log(arr[i]);
+    }
+  }
+})(arr);
+
+->IIFE:
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(() => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      console.log(arr[i]);
+    }
+  }
+})();
+
+->Arrow Function:
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(() => {
+  arr.forEach((num) => {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+})();
+-----------------------------------------------------------------------------------------
+
+2.Convert all the strings to title caps in a string array:
+->Anonymous Function:
+
+const arr = ["hello", "world", "javascript"];
+
+(function (arr) {
+  const titleCapsArr = arr.map((str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+  console.log(titleCapsArr);
+})(arr);
+
+
+->IIFE:
+
+const arr = ["hello", "world", "javascript"];
+
+(() => {
+  const titleCapsArr = arr.map((str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+  console.log(titleCapsArr);
+})();
+
+->Arrow Function:
+
+const arr = ["hello", "world", "javascript"];
+
+(() => {
+  const titleCapsArr = arr.map((str) => str.charAt(0).toUpperCase() + str.slice(1));
+  console.log(titleCapsArr);
+})();
+-------------------------------------------------------------------------------------------------
+
+3.Sum of all numbers in an array:
+->Anonymous Function:
+
+const arr = [1, 2, 3, 4, 5];
+
+(function (arr) {
+  let sum = 0;
+  arr.forEach((num) => {
+    sum += num;
+  });
+  console.log(sum);
+})(arr);
+
+->IIFE:
+
+const arr = [1, 2, 3, 4, 5];
+
+(() => {
+  let sum = 0;
+  arr.forEach((num) => {
+    sum += num;
+  });
+  console.log(sum);
+})();
+
+->Arrow Function:
+
+const arr = [1, 2, 3, 4, 5];
+
+(() => {
+  const sum = arr.reduce((acc, num) => acc + num, 0);
+  console.log(sum);
+})();
+---------------------------------------------------------------------------------------------------
+
+4.Return all the prime numbers in an array:
+->Anonymous Function:
+
+const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(function (arr) {
+  const primes = arr.filter((num) => {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  });
+  console.log(primes);
+})(arr);
+
+->IIFE:
+
+const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(() => {
+  const primes = arr.filter((num) => {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  });
+  console.log(primes);
+})();
+
+->Arrow Function:
+
+const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+(() => {
+  const primes = arr.filter((num) => {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  });
+  console.log(primes);
+})();
+-------------------------------------------------------------------------------------------
+
+5.Return all the palindromes in an array:
+->Anonymous Function:
+
+const arr = ["level", "hello", "radar", "world", "madam"];
+
+(function (arr) {
+  const palindromes = arr.filter((str) => {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+  });
+  console.log(palindromes);
+})(arr);
+
+->IIFE:
+
+const arr = ["level", "hello", "radar", "world", "madam"];
+
+(() => {
+  const palindromes = arr.filter((str) => {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+  });
+  console.log(palindromes);
+})();
+
+->Arrow Function:
+
+const arr = ["level", "hello", "radar", "world", "madam"];
+
+(() => {
+  const palindromes = arr.filter((str) => {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+  });
+  console.log(palindromes);
+})();
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+6.Return median of two sorted arrays of the same size:
+Anonymous Function:
+
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+
+(function (arr1, arr2) {
+  const combined = [...arr1, ...arr2].sort((a, b) => a - b);
+  const mid = combined.length / 2;
+  const median = combined.length % 2 === 0 ? (combined[mid - 1] + combined[mid]) / 2 : combined[Math.floor(mid)];
+  console.log(median);
+})(arr1, arr2);
+
+IIFE:
+
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+
+(() => {
+  const combined = [...arr1, ...arr2].sort((a, b) => a - b);
+  const mid = combined.length / 2;
+  const median = combined.length % 2 === 0 ? (combined[mid - 1] + combined[mid]) / 2 : combined[Math.floor(mid)];
+  console.log(median);
+})();
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+7.Remove duplicates from an array:
+Anonymous Function:
+
+const arr = [1, 2, 3, 2, 4, 1, 5, 3];
+
+(function (arr) {
+  const uniqueArr = [...new Set(arr)];
+  console.log(uniqueArr);
+})(arr);
+
+IIFE:
+
+const arr = [1, 2, 3, 2, 4, 1, 5, 3];
+
+(() => {
+  const uniqueArr = [...new Set(arr)];
+  console.log(uniqueArr);
+})();
+-------------------------------------------------------------------------------------------------
+
+8.Rotate an array by k times:
+Anonymous Function:
+
+const arr = [1, 2, 3, 4, 5];
+const k = 2;
+
+(function (arr, k) {
+  const rotations = k % arr.length;
+  const rotatedArr = [...arr.slice(rotations), ...arr.slice(0, rotations)];
+  console.log(rotatedArr);
+})(arr, k);
+
+IIFE:
+
+const arr = [1, 2, 3, 4, 5];
+const k = 2;
+
+(() => {
+  const rotations = k % arr.length;
+  const rotatedArr = [...arr.slice(rotations), ...arr.slice(0, rotations)];
+  console.log(rotatedArr);
+})();
+--------------------------------------------------------------------------------------------------
+
+-----------------------------------End--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
